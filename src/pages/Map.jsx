@@ -1,18 +1,6 @@
-import { useEffect } from "react";
 import styles from "./Page.module.css";
 
 export default function Map() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://public.flourish.studio/resources/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className={styles.inner}>
       <p className={styles.eyebrow}>OECD Philanthropy</p>
@@ -24,32 +12,38 @@ export default function Map() {
       </p>
 
       <div className={styles.mapContainer}>
-        {/* Connection Map - The Flow of Intent */}
         <section className={styles.section}>
           <h2 className={styles.graphTitle}>Global Funding Connections</h2>
           <p className={styles.graphDescription}>
-            This 3D globe visualizes the movement of development funds. 
-            Thicker arcs represent higher disbursement volumes ($M), while 
+            This 3D globe visualizes the movement of development funds.
+            Thicker arcs represent higher disbursement volumes ($M), while
             the paths trace the direct link between donor countries and recipient nations.
           </p>
-          <div 
-            className="flourish-embed flourish-globe" 
-            data-src="visualisation/28710028"
+          <iframe
+            src="https://flo.uri.sh/visualisation/28710028/embed"
+            title="Global Funding Connections"
+            frameBorder="0"
+            scrolling="no"
+            style={{ width: "100%", height: "600px", border: "none" }}
+            allowFullScreen
           />
         </section>
 
         <div className={styles.spacer} />
 
-        {/* 3D Region Map - Territorial Impact */}
         <section className={styles.section}>
           <h2 className={styles.graphTitle}>Regional Distribution & Impact</h2>
           <p className={styles.graphDescription}>
-            A territorial breakdown of funding density. Use the filters to explore 
+            A territorial breakdown of funding density. Use the filters to explore
             how Climate and Gender impact scores vary across different geographic regions.
           </p>
-          <div 
-            className="flourish-embed flourish-webgl" 
-            data-src="visualisation/28710271"
+          <iframe
+            src="https://flo.uri.sh/visualisation/28710271/embed"
+            title="Regional Distribution & Impact"
+            frameBorder="0"
+            scrolling="no"
+            style={{ width: "100%", height: "600px", border: "none" }}
+            allowFullScreen
           />
         </section>
       </div>

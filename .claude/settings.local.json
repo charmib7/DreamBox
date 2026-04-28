@@ -10,8 +10,7 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git pull *)",
-      "Bash(git merge *)",
-      "Bash(git commit -m 'Add settings.local.json *)"
+      "Bash(git merge *)"
     ]
   }
 }

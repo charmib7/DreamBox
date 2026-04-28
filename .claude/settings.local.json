@@ -10,7 +10,15 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git pull *)",
-      "Bash(git merge *)"
+      "Bash(git merge *)",
+      "Bash(git commit -m 'Add settings.local.json *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://docs.google.com/spreadsheets/d/e/2PACX-1vQLZ6CPnIEEAcb8ArqU8zg_qTugZjvxNl3ApzmdFC7YJmTorxiu_seydt65qH4MFA/pub?gid=500685901&single=true&output=csv\")",
+      "Bash(curl -sL -o /dev/null -w \"%{http_code}\" \"https://docs.google.com/spreadsheets/d/e/2PACX-1vQLZ6CPnIEEAcb8ArqU8zg_qTugZjvxNl3ApzmdFC7YJmTorxiu_seydt65qH4MFA/pub?gid=500685901&single=true&output=csv\")",
+      "Bash(git fetch *)",
+      "Bash(git push *)",
+      "Bash(git stash *)",
+      "Bash(git commit -m 'Merge main: pull teammate Timeline implementation, fix Rankings centering and Map fonts *)",
+      "Bash(git commit *)"
     ]
   }
 }

@@ -6,16 +6,16 @@ import Timeline from "./pages/Timeline";
 import Rankings from "./pages/Rankings";
 import Currency from "./pages/Currency";
 
-const PAGE_MAP = {
-  home: <Home />,
-  Map: <Map />,
-  Timeline: <Timeline />,
-  Rankings: <Rankings />,
-  Currency: <Currency />,
-};
-
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
+
+  const PAGE_MAP = {
+    home: <Home onNavigate={setCurrentPage} />,
+    Map: <Map />,
+    Timeline: <Timeline />,
+    Rankings: <Rankings />,
+    Currency: <Currency />,
+  };
 
   return (
     <Layout currentPage={currentPage} onNavigate={setCurrentPage}>

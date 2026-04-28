@@ -62,11 +62,13 @@
 }
 
 .main {
-  padding-top: var(--nav-h);
+  padding-top: calc(var(--nav-h) + 56px);
+  padding-bottom: 80px;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
   animation: fadeUp 0.4s ease both;
 }
 

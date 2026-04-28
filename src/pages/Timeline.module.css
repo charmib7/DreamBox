@@ -1,0 +1,417 @@
+.page {
+  width: 100%;
+  max-width: 920px;
+  padding: 48px 40px 80px;
+  align-self: flex-start;
+}
+
+/* ── Header ── */
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 36px;
+}
+
+.loading {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controlsRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.categoryTabs {
+  display: flex;
+  gap: 4px;
+  background: rgba(0,0,0,0.04);
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.catTab {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 7px 16px;
+  border-radius: 6px;
+  color: var(--muted);
+  background: transparent;
+  transition: background 0.18s, color 0.18s;
+  cursor: pointer;
+  border: none;
+}
+
+.catTab:hover { color: var(--ink); }
+
+.catTabActive {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* ── Filter toggle button ── */
+.filterToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s;
+}
+
+.filterToggle:hover,
+.filterToggleOpen {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filterBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+/* ── Currency select ── */
+.currencySelect {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 7px 28px 7px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  background: var(--paper);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238a8070' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.18s;
+}
+
+.currencySelect:hover,
+.currencySelect:focus {
+  border-color: var(--ink);
+  outline: none;
+}
+
+/* ── Count pills ── */
+.countPills {
+  display: flex;
+  gap: 6px;
+}
+
+.countPill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+}
+
+.countPill:hover { border-color: var(--ink); color: var(--ink); }
+
+.countPillActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 75, 47, 0.06);
+}
+
+/* ── Filter panel ── */
+.filterPanel {
+  background: rgba(0,0,0,0.025);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterGroupLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.filterPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filterPillsScroll {
+  flex-wrap: wrap;
+  max-height: 88px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.filterPill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.filterPill:hover { border-color: var(--ink); color: var(--ink); }
+
+.filterPillActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 75, 47, 0.07);
+}
+
+.clearBtn {
+  align-self: flex-start;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Stats bar ── */
+.statsBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.statItem strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.statDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.statFiltered {
+  color: var(--accent);
+}
+.statFiltered strong {
+  color: var(--accent);
+}
+
+/* ── Timeline chart ── */
+.chartWrap {
+  margin-top: 24px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 24px 12px;
+  position: relative;
+}
+
+.timelineSvg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+  cursor: default;
+}
+
+.chartHint {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 8px;
+  opacity: 0.7;
+  letter-spacing: 0.03em;
+}
+
+/* ── Legend row ── */
+.legendRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+
+.legendBtn {
+  padding: 4px 10px 4px 8px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, opacity 0.15s;
+}
+
+.legendBtn:hover {
+  border-color: var(--border);
+  background: rgba(0,0,0,0.03);
+}
+
+.legendBtnHighlighted {
+  border-color: var(--color, var(--border));
+  background: rgba(0,0,0,0.04);
+}
+
+.legendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legendLine {
+  width: 18px;
+  height: 2.5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: currentColor;
+}
+
+.legendAmt {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-left: 2px;
+}
+
+.totalToggle {
+  margin-left: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.totalToggle:hover { border-color: var(--ink); color: var(--ink); }
+
+/* ── Source note ── */
+.sourceNote {
+  margin-top: 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}

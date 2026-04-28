@@ -1,8 +1,8 @@
 .page {
   width: 100%;
   max-width: 920px;
-  padding: 48px 40px 80px;
-  align-self: flex-start;
+  padding: 0 40px 80px;
+  align-self: center;
 }
 
 /* ── Header ── */

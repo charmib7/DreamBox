@@ -3,6 +3,42 @@
   position: relative;
 }
 
+/* ── Ambient color blobs ── */
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+.blobSage {
+  width: 600px;
+  height: 600px;
+  top: -160px;
+  left: -180px;
+  background: #3a9e60;
+  opacity: 0.45;
+}
+
+.blobCopper {
+  width: 500px;
+  height: 500px;
+  bottom: 40px;
+  right: -120px;
+  background: #c83020;
+  opacity: 0.32;
+}
+
+.blobGold {
+  width: 380px;
+  height: 380px;
+  top: 38%;
+  right: 8%;
+  background: #d49010;
+  opacity: 0.28;
+}
+
 .grain {
   position: fixed;
   inset: 0;
@@ -19,7 +55,9 @@
   left: 0;
   right: 0;
   height: var(--nav-h);
-  background: var(--paper);
+  background: rgba(252, 232, 208, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1.5px solid var(--border);
   display: flex;
   align-items: center;
@@ -29,7 +67,7 @@
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
   font-weight: 900;
   font-size: 1.35rem;
   letter-spacing: -0.5px;

@@ -1,0 +1,295 @@
+.page {
+  width: 100%;
+  max-width: 1040px;
+  padding: 48px 40px 80px;
+  align-self: flex-start;
+}
+
+/* ── Header ── */
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--border);
+  margin-bottom: 36px;
+}
+
+.loading {
+  font-family: 'Jost', sans-serif;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.controlsLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.controlLabel {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.currencySelect {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 36px 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  background: var(--paper);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239ba182' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color 0.18s;
+  min-width: 260px;
+}
+
+.currencySelect:hover,
+.currencySelect:focus {
+  border-color: var(--ink);
+  outline: none;
+}
+
+/* ── Year pills ── */
+.yearPills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.yearPill {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
+}
+
+.yearPill:hover { border-color: var(--ink); color: var(--ink); }
+
+.yearPillActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 56, 24, 0.08);
+}
+
+/* ── Exchange rate card ── */
+.rateCard {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.rateMain {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rateLabel {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rateValue {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.rateSub {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.rateDivider {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.rateInverse {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* ── Stats bar ── */
+.statsBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.statItem strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.statDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Table ── */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.83rem;
+}
+
+.th {
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(0,0,0,0.025);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.th:hover { color: var(--ink); }
+
+.thActive { color: var(--accent); }
+.thActive:hover { color: var(--accent); }
+
+.thRight { text-align: right; }
+
+.tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+.tr:last-child { border-bottom: none; }
+
+.tr:hover { background: rgba(0,0,0,0.02); }
+
+.td {
+  padding: 10px 16px;
+  color: var(--ink);
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tdMuted { color: var(--muted); font-size: 0.78rem; }
+
+.tdRight { text-align: right; }
+
+.tdAmount {
+  font-weight: 500;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.empty {
+  padding: 40px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ── Source note ── */
+.sourceNote {
+  margin-top: 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}

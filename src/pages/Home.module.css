@@ -12,7 +12,7 @@
 
 /* ── Header ── */
 .eyebrow {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -22,7 +22,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
   font-weight: 900;
   font-size: clamp(3.5rem, 9vw, 7rem);
   line-height: 1.02;
@@ -39,7 +39,7 @@
 }
 
 .description {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 300;
   font-size: 1.05rem;
   line-height: 1.75;
@@ -79,7 +79,7 @@
 }
 
 .statValue {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
   font-weight: 700;
   font-size: 1.5rem;
   color: var(--ink);
@@ -87,7 +87,7 @@
 }
 
 .statLabel {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -128,7 +128,7 @@
 }
 
 .cardTitle {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--ink);
@@ -136,7 +136,7 @@
 }
 
 .cardDesc {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.82rem;
   font-weight: 300;
   line-height: 1.6;
@@ -144,7 +144,7 @@
 }
 
 .cardArrow {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--accent);

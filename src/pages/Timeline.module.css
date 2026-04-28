@@ -7,7 +7,7 @@
 
 /* ── Header ── */
 .eyebrow {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -17,7 +17,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Fraunces', serif;
   font-weight: 900;
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   line-height: 1.04;
@@ -27,7 +27,7 @@
 }
 
 .subtitle {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.6;
@@ -43,7 +43,7 @@
 }
 
 .loading {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -81,7 +81,7 @@
 }
 
 .catTab {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -107,7 +107,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   padding: 7px 14px;
@@ -140,7 +140,7 @@
 
 /* ── Currency select ── */
 .currencySelect {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   padding: 7px 28px 7px 12px;
@@ -169,7 +169,7 @@
 }
 
 .countPill {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 5px 12px;
@@ -186,7 +186,7 @@
 .countPillActive {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(200, 75, 47, 0.06);
+  background: rgba(200, 56, 24, 0.08);
 }
 
 /* ── Filter panel ── */
@@ -208,7 +208,7 @@
 }
 
 .filterGroupLabel {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -230,7 +230,7 @@
 }
 
 .filterPill {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
   padding: 4px 10px;
@@ -248,12 +248,12 @@
 .filterPillActive {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(200, 75, 47, 0.07);
+  background: rgba(200, 56, 24, 0.1);
 }
 
 .clearBtn {
   align-self: flex-start;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   color: var(--accent);
@@ -277,7 +277,7 @@
 }
 
 .statItem {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.8rem;
   color: var(--muted);
 }
@@ -320,7 +320,7 @@
 }
 
 .chartHint {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.68rem;
   color: var(--muted);
   text-align: center;
@@ -344,7 +344,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.8rem;
   color: var(--ink);
 }
@@ -384,7 +384,7 @@
 }
 
 .legendAmt {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.72rem;
   color: var(--muted);
   margin-left: 2px;
@@ -392,7 +392,7 @@
 
 .totalToggle {
   margin-left: auto;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--muted);
@@ -409,7 +409,7 @@
 /* ── Source note ── */
 .sourceNote {
   margin-top: 32px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-size: 0.7rem;
   color: var(--muted);
   border-top: 1px solid var(--border);

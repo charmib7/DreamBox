@@ -6,6 +6,10 @@ const NAV_TABS = ["Map", "Timeline", "Rankings", "Currency"];
 export default function Layout({ currentPage, onNavigate, children }) {
   return (
     <div className={styles.root}>
+      {/* Ambient color blobs */}
+      <div className={`${styles.blob} ${styles.blobSage}`}   aria-hidden="true" />
+      <div className={`${styles.blob} ${styles.blobCopper}`} aria-hidden="true" />
+      <div className={`${styles.blob} ${styles.blobGold}`}   aria-hidden="true" />
       {/* Grain texture overlay */}
       <div className={styles.grain} aria-hidden="true" />
 

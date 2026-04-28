@@ -1,8 +1,10 @@
 import pandas as pd
 import json
 
-print("Reading Excel file...")
-df = pd.read_excel("OECD Dataset.xlsx", sheet_name="complete_p4d3_df")
+SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQLZ6CPnIEEAcb8ArqU8zg_qTugZjvxNl3ApzmdFC7YJmTorxiu_seydt65qH4MFA/pub?gid=500685901&single=true&output=csv"
+
+print("Fetching Google Sheet CSV...")
+df = pd.read_csv(SHEET_URL)
 
 print(f"Raw rows: {len(df)}")
 

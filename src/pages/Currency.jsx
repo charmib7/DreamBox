@@ -33,12 +33,15 @@ function fmt(usdMillions, currency) {
 }
 
 export default function Currency() {
-  const [data, setData]       = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [currency, setCurrency] = useState(CURRENCIES[0]);
-  const [year, setYear]         = useState("All");
-  const [sortKey, setSortKey]   = useState("amount");
-  const [sortDir, setSortDir]   = useState("desc");
+  const [data, setData]           = useState(null);
+  const [loading, setLoading]     = useState(true);
+  const [currency, setCurrency]   = useState(CURRENCIES[0]);
+  const [year, setYear]           = useState("All");
+  const [selectedSectors, setSelectedSectors] = useState([]);
+  const [orgSearch, setOrgSearch] = useState("");
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [sortKey, setSortKey]     = useState("amount");
+  const [sortDir, setSortDir]     = useState("desc");
 
   useEffect(() => {
     fetch("/oecd_data.json").then((r) => r.json()).then((d) => {
@@ -55,11 +58,24 @@ export default function Currency() {
     }
   };
 
+  const toggleSector = (s) =>
+    setSelectedSectors((prev) =>
+      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]
+    );
+
+  const clearFilters = () => { setSelectedSectors([]); setOrgSearch(""); };
+
+  const activeFilterCount = selectedSectors.length + (orgSearch.trim() ? 1 : 0);
+
   const rows = useMemo(() => {
     if (!data) return [];
-    const filtered = year === "All"
-      ? data.records
-      : data.records.filter((r) => r.year === year);
+    const orgQ = orgSearch.trim().toLowerCase();
+    const filtered = data.records.filter((r) => {
+      if (year !== "All" && r.year !== year) return false;
+      if (selectedSectors.length && !selectedSectors.includes(r.sector)) return false;
+      if (orgQ && !(r.org ?? "").toLowerCase().includes(orgQ)) return false;
+      return true;
+    });
 
     return [...filtered].sort((a, b) => {
       const av = a[sortKey], bv = b[sortKey];
@@ -67,7 +83,7 @@ export default function Currency() {
       const cmp = String(av ?? "").localeCompare(String(bv ?? ""));
       return sortDir === "asc" ? cmp : -cmp;
     });
-  }, [data, year, sortKey, sortDir]);
+  }, [data, year, selectedSectors, orgSearch, sortKey, sortDir]);
 
   const totalUsd = useMemo(() => rows.reduce((s, r) => s + r.amount, 0), [rows]);
 
@@ -105,18 +121,62 @@ export default function Currency() {
             ))}
           </select>
         </div>
-        <div>
-          <p className={styles.controlLabel} style={{ marginBottom: 6 }}>Year</p>
-          <div className={styles.yearPills}>
-            {YEARS.map((yr) => (
-              <button key={yr}
-                className={`${styles.yearPill} ${year === yr ? styles.yearPillActive : ""}`}
-                onClick={() => setYear(yr)}
-              >{yr}</button>
-            ))}
+        <div className={styles.controlsRight}>
+          <div>
+            <p className={styles.controlLabel} style={{ marginBottom: 6 }}>Year</p>
+            <div className={styles.yearPills}>
+              {YEARS.map((yr) => (
+                <button key={yr}
+                  className={`${styles.yearPill} ${year === yr ? styles.yearPillActive : ""}`}
+                  onClick={() => setYear(yr)}
+                >{yr}</button>
+              ))}
+            </div>
+          </div>
+          <div style={{ paddingTop: 22 }}>
+            <button
+              className={`${styles.filterToggle} ${filtersOpen ? styles.filterToggleOpen : ""}`}
+              onClick={() => setFiltersOpen((v) => !v)}
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 3h12M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+              Filters
+              {activeFilterCount > 0 && <span className={styles.filterBadge}>{activeFilterCount}</span>}
+            </button>
           </div>
         </div>
       </div>
+
+      {/* ── Filter panel ── */}
+      {filtersOpen && (
+        <div className={styles.filterPanel}>
+          <div className={styles.filterGroup}>
+            <p className={styles.filterGroupLabel}>Sector</p>
+            <div className={`${styles.filterPills} ${styles.filterPillsScroll}`}>
+              {data.filters.sectors.map((s) => (
+                <button key={s}
+                  className={`${styles.filterPill} ${selectedSectors.includes(s) ? styles.filterPillActive : ""}`}
+                  onClick={() => toggleSector(s)}
+                >{s}</button>
+              ))}
+            </div>
+          </div>
+          <div className={styles.filterGroup}>
+            <p className={styles.filterGroupLabel}>Organization</p>
+            <input
+              className={styles.orgSearch}
+              type="text"
+              placeholder="Type to search organizations…"
+              value={orgSearch}
+              onChange={(e) => setOrgSearch(e.target.value)}
+            />
+          </div>
+          {activeFilterCount > 0 && (
+            <button className={styles.clearBtn} onClick={clearFilters}>Clear all filters</button>
+          )}
+        </div>
+      )}
 
       {/* ── Exchange rate card ── */}
       <div className={styles.rateCard}>
@@ -153,6 +213,12 @@ export default function Currency() {
         {year !== "All" && (
           <><span className={styles.statDot} />
           <span className={styles.statItem}><strong>{year}</strong> only</span></>
+        )}
+        {activeFilterCount > 0 && (
+          <><span className={styles.statDot} />
+          <span className={`${styles.statItem} ${styles.statFiltered}`}>
+            {activeFilterCount} filter{activeFilterCount > 1 ? "s" : ""} active
+          </span></>
         )}
       </div>
 

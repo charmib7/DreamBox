@@ -1,8 +1,8 @@
 .page {
   width: 100%;
   max-width: 1040px;
-  padding: 48px 40px 80px;
-  align-self: flex-start;
+  padding: 48px 40px 32px;
+  align-self: center;
 }
 
 /* ── Header ── */
@@ -95,6 +95,142 @@
 .currencySelect:focus {
   border-color: var(--ink);
   outline: none;
+}
+
+/* ── Controls right ── */
+.controlsRight {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Filter toggle ── */
+.filterToggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s;
+}
+
+.filterToggle:hover,
+.filterToggleOpen {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.filterBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+/* ── Filter panel ── */
+.filterPanel {
+  background: rgba(0,0,0,0.025);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 24px 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterGroupLabel {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.filterPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filterPillsScroll {
+  max-height: 92px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.filterPill {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.filterPill:hover { border-color: var(--ink); color: var(--ink); }
+
+.filterPillActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 56, 24, 0.08);
+}
+
+.orgSearch {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  width: 100%;
+  max-width: 360px;
+  transition: border-color 0.18s;
+}
+
+.orgSearch::placeholder { color: var(--muted); }
+.orgSearch:focus { border-color: var(--ink); }
+
+.clearBtn {
+  align-self: flex-start;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ── Year pills ── */
@@ -211,9 +347,15 @@
   flex-shrink: 0;
 }
 
+.statFiltered { color: var(--accent); }
+.statFiltered strong { color: var(--accent); }
+
 /* ── Table ── */
 .tableWrap {
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 560px);
+  min-height: 280px;
   border: 1px solid var(--border);
   border-radius: 12px;
   margin-top: 20px;
@@ -227,6 +369,9 @@
 }
 
 .th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: 11px 16px;
   text-align: left;
   font-size: 0.7rem;
@@ -234,7 +379,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  background: rgba(0,0,0,0.025);
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
   border-bottom: 1px solid var(--border);
   cursor: pointer;
   white-space: nowrap;

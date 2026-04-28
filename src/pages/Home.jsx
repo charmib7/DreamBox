@@ -30,7 +30,7 @@ const CARDS = [
 export default function Home({ onNavigate }) {
   return (
     <div className={styles.page}>
-      <p className={styles.eyebrow}>OECD Philanthropy Dashboard</p>
+      <p className={styles.eyebrow}>OECD Philanthropy</p>
       <h1 className={styles.title}>DreamBox</h1>
       <div className={styles.divider} />
       <p className={styles.description}>

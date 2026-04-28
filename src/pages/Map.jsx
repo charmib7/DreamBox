@@ -15,13 +15,12 @@ export default function Map() {
 
   return (
     <div className={styles.inner}>
-      <p className={styles.eyebrow}>WorldScope</p>
+      <p className={styles.eyebrow}>OECD Philanthropy</p>
       <h1 className={styles.title}>Global Impact Analysis</h1>
       <div className={styles.divider} />
-      
       <p className={styles.subtitle}>
-        <strong>Bridges of Development:</strong> Tracking the flow of global aid 
-        from donor origins to regional impact sites.
+        Tracking the flow of development funds from donor countries to recipient nations,
+        weighted by climate and gender impact priorities.
       </p>
 
       <div className={styles.mapContainer}>

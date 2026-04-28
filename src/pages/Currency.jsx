@@ -160,7 +160,7 @@ export default function Currency() {
 
   if (loading) return (
     <div className={styles.inner}>
-      <p className={styles.eyebrow}>WorldScope</p>
+      <p className={styles.eyebrow}>OECD Philanthropy</p>
       <h1 className={styles.title}>Currency</h1>
       <div className={styles.divider} />
       <p style={{ color: "var(--color-text-secondary)", fontSize: 14 }}>Loading funding data…</p>
@@ -169,7 +169,7 @@ export default function Currency() {
 
   if (error) return (
     <div className={styles.inner}>
-      <p className={styles.eyebrow}>WorldScope</p>
+      <p className={styles.eyebrow}>OECD Philanthropy</p>
       <h1 className={styles.title}>Currency</h1>
       <div className={styles.divider} />
       <p style={{ color: "var(--color-text-danger)", fontSize: 14 }}>
@@ -182,7 +182,7 @@ export default function Currency() {
     <div className={styles.inner}>
 
       {/* ── Header ── */}
-      <p className={styles.eyebrow}>WorldScope</p>
+      <p className={styles.eyebrow}>OECD Philanthropy</p>
       <h1 className={styles.title}>Currency</h1>
       <div className={styles.divider} />
       <p className={styles.subtitle}>

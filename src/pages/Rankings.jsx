@@ -249,7 +249,7 @@ export default function Rankings() {
 
       {/* ── Compare section ── */}
       <CompareSection
-        records={filteredRecords}
+        records={data.records}
         rankings={rankings}
         category={category}
         currency={currency}

@@ -18,7 +18,11 @@
       "Bash(git push *)",
       "Bash(git stash *)",
       "Bash(git commit -m 'Merge main: pull teammate Timeline implementation, fix Rankings centering and Map fonts *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(node --input-type=module)",
+      "Bash(npx vite *)",
+      "Bash(node -e \"const d = require\\('./public/oecd_data.json'\\); console.log\\('Keys:', Object.keys\\(d\\)\\); console.log\\('First record:', JSON.stringify\\(d.records[0], null, 2\\)\\); console.log\\('Filters:', JSON.stringify\\(d.filters, null, 2\\)\\);\")",
+      "Bash(node -e ' *)"
     ]
   }
 }

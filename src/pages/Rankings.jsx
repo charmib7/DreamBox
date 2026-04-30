@@ -276,25 +276,27 @@ function CompareSection({ records, rankings, category, currency, filters }) {
   const [cRegions,     setCRegions]     = useState([]);
   const [cFlows,       setCFlows]       = useState([]);
   const [cInstruments, setCInstruments] = useState([]);
+  const [cSectors,     setCsectors]     = useState([]);
 
   const toggleC = (setter, current, val) =>
     setter(current.includes(val) ? current.filter((v) => v !== val) : [...current, val]);
 
-  const cFilterCount = cYears.length + cRegions.length + cFlows.length + cInstruments.length;
+  const cFilterCount = cYears.length + cRegions.length + cFlows.length + cInstruments.length + cSectors.length;
 
-  const clearCFilters = () => { setCYears([]); setCRegions([]); setCFlows([]); setCInstruments([]); };
+  const clearCFilters = () => { setCYears([]); setCRegions([]); setCFlows([]); setCInstruments([]); setCsectors([]); };
 
-  // Apply compare-specific filters on top of the already-filtered records
+  // Apply compare-specific filters independently of main ranking filters
   const compareRecords = useMemo(() => {
     if (!cFilterCount) return records;
     return records.filter((r) => {
-      if (cYears.length       && !cYears.includes(r.year))           return false;
-      if (cRegions.length     && !cRegions.includes(r.region))       return false;
-      if (cFlows.length       && !cFlows.includes(r.flowType))       return false;
+      if (cYears.length       && !cYears.includes(r.year))             return false;
+      if (cRegions.length     && !cRegions.includes(r.region))         return false;
+      if (cFlows.length       && !cFlows.includes(r.flowType))         return false;
       if (cInstruments.length && !cInstruments.includes(r.instrument)) return false;
+      if (cSectors.length     && !cSectors.includes(r.sector))         return false;
       return true;
     });
-  }, [records, cYears, cRegions, cFlows, cInstruments, cFilterCount]);
+  }, [records, cYears, cRegions, cFlows, cInstruments, cSectors, cFilterCount]);
 
   const suggestions = useMemo(() => {
     if (!search.trim()) return [];
@@ -360,6 +362,7 @@ function CompareSection({ records, rankings, category, currency, filters }) {
         <div className={styles.compareFilterPanel}>
           <FilterGroup label="Year"       options={filters.years}       selected={cYears}       onToggle={(v) => toggleC(setCYears, cYears, v)} />
           <FilterGroup label="Region"     options={filters.regions}     selected={cRegions}     onToggle={(v) => toggleC(setCRegions, cRegions, v)} />
+          <FilterGroup label="Sector"     options={filters.sectors}     selected={cSectors}     onToggle={(v) => toggleC(setCsectors, cSectors, v)} scrollable />
           <FilterGroup label="Flow Type"  options={filters.flowTypes}   selected={cFlows}       onToggle={(v) => toggleC(setCFlows, cFlows, v)} />
           <FilterGroup label="Instrument" options={filters.instruments} selected={cInstruments} onToggle={(v) => toggleC(setCInstruments, cInstruments, v)} scrollable />
           {cFilterCount > 0 && (

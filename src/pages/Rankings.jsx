@@ -108,7 +108,7 @@ export default function Rankings() {
   const [selectedInstruments, setSelectedInstruments] = useState([]);
 
   useEffect(() => {
-    fetch("/oecd_data.json").then((r) => r.json()).then((d) => {
+    fetch(`${import.meta.env.BASE_URL}oecd_data.json`).then((r) => r.json()).then((d) => {
       setData(d); setLoading(false);
     });
   }, []);

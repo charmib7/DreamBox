@@ -44,7 +44,7 @@ export default function Currency() {
   const [sortDir, setSortDir]     = useState("desc");
 
   useEffect(() => {
-    fetch("/oecd_data.json").then((r) => r.json()).then((d) => {
+    fetch(`${import.meta.env.BASE_URL}oecd_data.json`).then((r) => r.json()).then((d) => {
       setData(d); setLoading(false);
     });
   }, []);

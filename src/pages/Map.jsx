@@ -298,7 +298,7 @@ export default function Map() {
   const [countries, setCountries] = useState(null);
 
   useEffect(() => {
-    fetch("/oecd_data.json").then(r => r.json()).then(d => {
+    fetch(`${import.meta.env.BASE_URL}oecd_data.json`).then(r => r.json()).then(d => {
       const map = {};
       d.records.forEach(r => {
         if (!COUNTRY_COORDS[r.recipientCountry]) return;
